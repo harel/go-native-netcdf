@@ -605,7 +605,11 @@ func New(file api.ReadSeekerCloser) (ag api.Group, err error) {
 	return api.Group(c), nil
 }
 
-// Attributes returns the global attributes for this group.
+// GlobAttributes returns the global attributes for this group.
+func (cdf *CDF) GlobAttributes() api.AttributeMap {
+	return cdf.globalAttrs
+}
+
 func (cdf *CDF) Attributes() api.AttributeMap {
 	return cdf.globalAttrs
 }
