@@ -114,7 +114,7 @@ gettingfiles:
 		}
 		newKeys := make([]string, 0)
 		newValues := make(map[string]interface{})
-		gattr := nc.Attributes()
+		gattr := nc.GlobAttributes()
 		for _, attrName := range gattr.Keys() {
 			v, _ := gattr.Get(attrName)
 			newKeys = append(newKeys, attrName)

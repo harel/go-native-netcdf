@@ -35,8 +35,8 @@ func common(b testing.TB, num int, slow convertType) {
 			}
 			_ = v.Values
 		}
-		for _, n := range nc.Attributes().Keys() {
-			_, has := nc.Attributes().Get(n)
+		for _, n := range nc.GlobAttributes().Keys() {
+			_, has := nc.GlobAttributes().Get(n)
 			if !has {
 				b.Error("Missing global attr", n)
 				return

@@ -20,7 +20,7 @@ func TestAttrTypes(t *testing.T) {
 	}
 	defer nc.Close()
 	aName := "Tricky"
-	at, has := nc.Attributes().GetType(aName)
+	at, has := nc.GlobAttributes().GetType(aName)
 	if !has {
 		t.Error("Can't find type for attribute", aName)
 		return
@@ -46,7 +46,7 @@ func TestGlobalAttrTypes(t *testing.T) {
 	}
 	defer nc.Close()
 	aName := "Tricky"
-	at, has := nc.Attributes().GetType(aName)
+	at, has := nc.GlobAttributes().GetType(aName)
 	if !has {
 		t.Error("Can't find type for attribute", aName)
 		return
@@ -341,7 +341,7 @@ func TestBitfieldType(t *testing.T) {
 		return
 	}
 	defer nc.Close()
-	a := nc.Attributes()
+	a := nc.GlobAttributes()
 	if err != nil {
 		t.Error(err)
 		return

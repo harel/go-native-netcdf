@@ -777,7 +777,7 @@ func TestGlobalAttrs(t *testing.T) {
 		t.Error(err)
 		return
 	}
-	got := nc.Attributes()
+	got := nc.GlobAttributes()
 	checkAllAttrs(t, "<global>", got, exp)
 
 	gTypes := map[string]interface{}{
@@ -798,7 +798,7 @@ func TestGlobalAttrs(t *testing.T) {
 	}
 
 	for _, a := range got.Keys() {
-		ty, has := nc.Attributes().GetType(a)
+		ty, has := nc.GlobAttributes().GetType(a)
 		if !has {
 			t.Error("can't find type for attribute", a)
 		}
@@ -1556,7 +1556,7 @@ func TestVariableLength(t *testing.T) {
 		t.Error(err)
 		return
 	}
-	got := nc.Attributes()
+	got := nc.GlobAttributes()
 	ncGenBug := true
 	if !ncGenBug {
 		checkAllAttrs(t, "<TestVariableLength>", got, expAttrs)
@@ -1676,7 +1676,7 @@ func TestVariableLength2(t *testing.T) {
 		t.Error(err)
 		return
 	}
-	got := nc.Attributes()
+	got := nc.GlobAttributes()
 	ncGenBug := true
 	if !ncGenBug {
 		checkAllAttrs(t, "<TestVariableLength>", got, expAttrs)
@@ -2099,7 +2099,7 @@ func TestBitfield(t *testing.T) {
 		t.Error(err)
 		return
 	}
-	got := nc.Attributes()
+	got := nc.GlobAttributes()
 	checkAllAttrs(t, "<testbitfields>", got, attrs)
 }
 
@@ -2117,7 +2117,7 @@ func TestNCProperties(t *testing.T) {
 		return
 	}
 	defer nc.Close()
-	attrs := nc.Attributes()
+	attrs := nc.GlobAttributes()
 	if len(attrs.Keys()) != 0 {
 		t.Error("These attributes should not have been returned:", attrs.Keys())
 	}

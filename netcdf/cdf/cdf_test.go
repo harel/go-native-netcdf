@@ -422,7 +422,7 @@ func TestNCProperties(t *testing.T) {
 		return
 	}
 	defer nc.Close()
-	attrs := nc.Attributes()
+	attrs := nc.GlobAttributes()
 	if len(attrs.Keys()) != 0 {
 		t.Error("These attributes should not have been returned:", attrs.Keys())
 	}
@@ -758,7 +758,7 @@ func TestVersion(t *testing.T) {
 			continue
 		}
 		_ = nc.ListVariables()
-		attrs := nc.Attributes()
+		attrs := nc.GlobAttributes()
 		hidden, has := attrs.Get(ncpKey)
 		if has {
 			t.Log(version, "hidden property=", hidden)
@@ -927,7 +927,7 @@ func TestGlobalAttributes(t *testing.T) {
 		return
 	}
 	defer nc.Close()
-	amap := nc.Attributes()
+	amap := nc.GlobAttributes()
 	if len(amap.Keys()) != 1 {
 		t.Error("length wrong")
 		return

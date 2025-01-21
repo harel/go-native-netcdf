@@ -52,7 +52,9 @@ type Group interface {
 	// longer being used by any other groups.
 	Close()
 
-	// Attributes returns the global attributes for this group.
+	// GlobAttributes returns the global attributes for this group.
+	GlobAttributes() AttributeMap
+
 	Attributes() AttributeMap
 
 	// ListVariables lists the variables in this group.

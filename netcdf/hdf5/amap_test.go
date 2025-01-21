@@ -19,7 +19,7 @@ func TestGoType(t *testing.T) {
 		return
 	}
 	defer nc.Close()
-	om := nc.Attributes()
+	om := nc.GlobAttributes()
 	rightTypes := map[string]string{
 		"i":  "int32",
 		"f":  "float32",
@@ -57,7 +57,7 @@ func TestType(t *testing.T) {
 		return
 	}
 	defer nc.Close()
-	om := nc.Attributes()
+	om := nc.GlobAttributes()
 	rightTypes := map[string]string{
 		"i":  "int",
 		"f":  "float",
