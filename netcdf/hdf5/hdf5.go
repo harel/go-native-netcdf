@@ -3116,7 +3116,11 @@ func (h5 *HDF5) findVariable(varName string) *object {
 	}
 	if hasClass && !hasCoordinates && !hasName {
 		logger.Info("doesn't have name")
-		return nil
+		if len(obj.name) > 0 {
+			obj.attrlist = append(obj.attrlist, &attribute{name: "NAME", value: obj.name, class: 3})
+		} else {
+			return nil
+		}
 	}
 	if obj.objAttr.dimensions == nil {
 		logger.Infof("variable %s datatype only", obj.name)
