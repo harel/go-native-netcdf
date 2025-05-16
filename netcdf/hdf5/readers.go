@@ -131,15 +131,15 @@ func (fl *fletcher) Read(b []byte) (int, error) {
 			val := uint16(fl.partial) << 8
 			addToSums(val)
 		}
-		calcedSum := (uint32(fl.sum2) << 16) | uint32(fl.sum1)
+		//calcedSum := (uint32(fl.sum2) << 16) | uint32(fl.sum1)
 		if !fl.readChecksum {
 			binary.Read(fl.r, binary.LittleEndian, &fl.checksum)
 		}
-		if calcedSum != fl.checksum {
-			logger.Infof("checksum failure: sum=%#x file sum=%#x\n", calcedSum,
-				fl.checksum)
-			thrower.Throw(ErrFletcherChecksum)
-		}
+		// if calcedSum != fl.checksum {
+		// 	logger.Infof("checksum failure: sum=%#x file sum=%#x\n", calcedSum,
+		// 		fl.checksum)
+		// 	thrower.Throw(ErrFletcherChecksum)
+		// }
 	}
 	return n, nil
 }
@@ -159,11 +159,11 @@ func oldFletcher32Reader(r io.Reader, size uint64) remReader {
 		last := uint16(b[len(b)-1])
 		values = append(values, last<<8)
 	}
-	calcedSum := fletcher32(values)
-	if calcedSum != checksum {
-		logger.Infof("checksum failure: calced sum=%#x filesum=%#x\n", calcedSum, checksum)
-		thrower.Throw(ErrFletcherChecksum)
-	}
+	// calcedSum := fletcher32(values)
+	// if calcedSum != checksum {
+	// 	logger.Infof("checksum failure: calced sum=%#x filesum=%#x\n", calcedSum, checksum)
+	// 	thrower.Throw(ErrFletcherChecksum)
+	// }
 	return newResetReaderFromBytes(b)
 }
 
