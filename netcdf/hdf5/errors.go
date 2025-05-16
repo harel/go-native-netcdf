@@ -19,7 +19,7 @@ var (
 	ErrNotFound = errors.New("not found")
 
 	// ErrFletcherChecksum is returned for corrupted data failing the checksum
-	ErrFletcherChecksum = errors.New("fletcher checksum failure")
+	ErrFletcherChecksum = errors.New("fletcher checksum failure!!!")
 
 	// ErrVersion is returned when the particular HDF5 version is not supported
 	ErrVersion = errors.New("hdf5 version not supported")
