@@ -12,8 +12,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/batchatco/go-native-netcdf/netcdf/api"
-	"github.com/batchatco/go-native-netcdf/netcdf/util"
+	"github.com/harel/go-native-netcdf/netcdf/api"
+	"github.com/harel/go-native-netcdf/netcdf/util"
 )
 
 type keyVal struct {
@@ -436,7 +436,7 @@ func TestNCProperties(t *testing.T) {
 		t.Error("Hidden property is not correct value:", hidden)
 		return
 	}
-	if !strings.HasPrefix(spl[1], "github.com/batchatco/go-native-netcdf=") {
+	if !strings.HasPrefix(spl[1], "github.com/harel/go-native-netcdf=") {
 		t.Error("Hidden property is not correct value:", hidden)
 		return
 	}

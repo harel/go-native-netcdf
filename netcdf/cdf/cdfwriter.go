@@ -13,10 +13,10 @@ import (
 	"os"
 	"reflect"
 
-	"github.com/batchatco/go-native-netcdf/internal"
-	"github.com/batchatco/go-native-netcdf/netcdf/api"
-	"github.com/batchatco/go-native-netcdf/netcdf/util"
 	"github.com/batchatco/go-thrower"
+	"github.com/harel/go-native-netcdf/internal"
+	"github.com/harel/go-native-netcdf/netcdf/api"
+	"github.com/harel/go-native-netcdf/netcdf/util"
 )
 
 type countedWriter struct {
@@ -949,7 +949,7 @@ func OpenWriter(fileName string) (*CDFWriter, error) {
 	globalAttrs, err := util.NewOrderedMap(
 		[]string{ncpKey},
 		map[string]interface{}{
-			ncpKey: "version=2,github.com/batchatco/go-native-netcdf=1.0",
+			ncpKey: "version=2,github.com/harel/go-native-netcdf=1.0",
 		})
 	thrower.ThrowIfError(err)
 	cw := &CDFWriter{

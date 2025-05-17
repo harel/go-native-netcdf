@@ -12,10 +12,10 @@ import (
 	"os"
 	"reflect"
 
-	"github.com/batchatco/go-native-netcdf/internal"
-	"github.com/batchatco/go-native-netcdf/netcdf/api"
-	"github.com/batchatco/go-native-netcdf/netcdf/util"
 	"github.com/batchatco/go-thrower"
+	"github.com/harel/go-native-netcdf/internal"
+	"github.com/harel/go-native-netcdf/netcdf/api"
+	"github.com/harel/go-native-netcdf/netcdf/util"
 )
 
 const (

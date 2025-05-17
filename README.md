@@ -55,7 +55,7 @@ package main
 
 import (
     "fmt"
-    "github.com/batchatco/go-native-netcdf/netcdf"
+    "github.com/harel/go-native-netcdf/netcdf"
 )
 
 func main() {
@@ -92,7 +92,7 @@ package main
 
 import (
     "fmt"
-    "github.com/batchatco/go-native-netcdf/netcdf"
+    "github.com/harel/go-native-netcdf/netcdf"
 )
 
 func main() {
@@ -135,9 +135,9 @@ func main() {
 package main
 
 import (
-  "github.com/batchatco/go-native-netcdf/netcdf/api"
-  "github.com/batchatco/go-native-netcdf/netcdf/cdf"
-  "github.com/batchatco/go-native-netcdf/netcdf/util"
+  "github.com/harel/go-native-netcdf/netcdf/api"
+  "github.com/harel/go-native-netcdf/netcdf/cdf"
+  "github.com/harel/go-native-netcdf/netcdf/util"
 )
 
 func main() {

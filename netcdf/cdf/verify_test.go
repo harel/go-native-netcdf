@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/batchatco/go-native-netcdf/netcdf/util"
+	"github.com/harel/go-native-netcdf/netcdf/util"
 )
 
 func getFiles(t *testing.T, path string, suffix string) map[string]bool {

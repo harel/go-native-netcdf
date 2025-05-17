@@ -6,9 +6,9 @@ import (
 	"io"
 	"os"
 
-	"github.com/batchatco/go-native-netcdf/netcdf/api"
-	"github.com/batchatco/go-native-netcdf/netcdf/cdf"
-	"github.com/batchatco/go-native-netcdf/netcdf/hdf5"
+	"github.com/harel/go-native-netcdf/netcdf/api"
+	"github.com/harel/go-native-netcdf/netcdf/cdf"
+	"github.com/harel/go-native-netcdf/netcdf/hdf5"
 )
 
 const (
